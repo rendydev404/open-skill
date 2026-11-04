@@ -204,6 +204,17 @@ Buat video iklan 40 detik untuk produk ini dengan VO bahasa Indonesia dan SFX El
 
 ## 🚀 Pasang
 
+### ⚡ Cara tercepat
+
+```bash
+npx skills add rendydev404/open-skill
+```
+
+Perintah ini menemukan ketiga skill di repo ini dan menawarkan untuk memasangnya. Untuk satu skill saja:
+`npx skills add rendydev404/open-skill --skill demotion`.
+
+### 📋 Salin manual
+
 Skill Claude Code adalah folder berisi `SKILL.md`. Salin folder skill ke `~/.claude/skills/` (tersedia di semua proyek) atau ke
 `.claude/skills/` di dalam repo (khusus proyek itu).
 
