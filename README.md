@@ -1,26 +1,30 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="open-skill: koleksi skill Claude Code untuk video produk otomatis" width="100%">
+<img src="assets/banner.svg" alt="open-skill: koleksi Agent Skills untuk video produk otomatis, jalan di semua agen AI" width="100%">
 
 <br>
 
 <img alt="Skills" src="https://img.shields.io/badge/skills-3-3ddc97?style=for-the-badge&labelColor=0b1813">
-<img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-skills-d97757?style=for-the-badge&labelColor=0b1813">
+<img alt="Agent Skills" src="https://img.shields.io/badge/Agent_Skills-79_agen_AI-d97757?style=for-the-badge&labelColor=0b1813">
 <img alt="Remotion" src="https://img.shields.io/badge/Remotion-video_as_code-0b84f3?style=for-the-badge&labelColor=0b1813">
 <img alt="Last commit" src="https://img.shields.io/github/last-commit/rendydev404/open-skill?style=for-the-badge&labelColor=0b1813&color=3ddc97">
 <img alt="Stars" src="https://img.shields.io/github/stars/rendydev404/open-skill?style=for-the-badge&labelColor=0b1813&color=3ddc97">
 
 <br><br>
 
-**[Skill](#-skill-di-repo-ini)** &nbsp;·&nbsp; **[Pasang](#-pasang)** &nbsp;·&nbsp; **[Cara memakai](#-cara-memakai)** &nbsp;·&nbsp; **[Prasyarat](#-prasyarat)** &nbsp;·&nbsp; **[Struktur repo](#-struktur-repo)** &nbsp;·&nbsp; **[FAQ](#-faq)**
+**[Skill](#-skill-di-repo-ini)** &nbsp;·&nbsp; **[Agen AI](#-agen-ai-yang-didukung)** &nbsp;·&nbsp; **[Pasang](#-pasang)** &nbsp;·&nbsp; **[Cara memakai](#-cara-memakai)** &nbsp;·&nbsp; **[Prasyarat](#-prasyarat)** &nbsp;·&nbsp; **[Struktur repo](#-struktur-repo)** &nbsp;·&nbsp; **[FAQ](#-faq)**
 
 </div>
 
 <br>
 
-**open-skill** adalah kumpulan *skill* [Claude Code](https://claude.com/claude-code) buatan sendiri yang mengubah satu perintah
-menjadi **video produk yang dirender dengan [Remotion](https://www.remotion.dev)**: demo sistem dari layar asli aplikasi, reel
-motion graphic bergaya editorial, sampai video iklan lengkap dengan voice over dan sound effect.
+**open-skill** adalah kumpulan *Agent Skills* yang mengubah satu perintah menjadi **video produk yang dirender dengan
+[Remotion](https://www.remotion.dev)**: demo sistem dari layar asli aplikasi, reel motion graphic bergaya editorial, sampai
+video iklan lengkap dengan voice over dan sound effect.
+
+Skill ditulis dengan format terbuka [Agent Skills](https://agentskills.io) (folder berisi `SKILL.md`), jadi **bisa dipakai oleh
+semua agen AI yang mendukungnya**: Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Cline, Windsurf, Roo Code,
+Hermes Agent, dan 70+ lainnya ([daftar lengkap](#-agen-ai-yang-didukung)).
 
 Semuanya *video sebagai kode*: mulus 30-60 fps, bisa diulang, dan gampang diperbarui saat produk berubah.
 
@@ -48,7 +52,7 @@ Semuanya *video sebagai kode*: mulus 30-60 fps, bisa diulang, dan gampang diperb
 | 📰 **[motion-reel](skills/motion-reel)** | Reel produk/fitur gaya editorial: kertas krem, tinta, highlighter, tipografi kinetik, SFX | Peluncuran fitur, promo singkat, explainer | 1080p · 30 fps · 20-45 dtk |
 | 📣 **[product-motion-ads](skills/product-motion-ad)** | Iklan motion graphic mengikuti flow produk, dengan **voice over & SFX ElevenLabs** | Iklan SaaS/app/produk, video promo bersuara | 1080p · 30 fps · 30-45 dtk |
 
-> Nama folder skill ketiga di repo ini adalah `product-motion-ad` (sama dengan nama skill-nya di Claude Code).
+> Nama folder skill ketiga di repo ini adalah `product-motion-ad` (sama dengan nama skill-nya di `SKILL.md`).
 
 ---
 
@@ -202,52 +206,164 @@ Buat video iklan 40 detik untuk produk ini dengan VO bahasa Indonesia dan SFX El
 
 ---
 
+## 🤖 Agen AI yang didukung
+
+> **Tidak terikat satu agen.** Skill di repo ini mengikuti spesifikasi terbuka [Agent Skills](https://agentskills.io), jadi satu folder
+> yang sama bisa dibaca oleh **79 agen AI** lewat installer `skills` ([vercel-labs/skills](https://github.com/vercel-labs/skills)).
+
+`Claude Code` `Codex` `Cursor` `Gemini CLI` `GitHub Copilot` `OpenCode` `Cline` `Windsurf` `Roo Code` `Kilo Code` `Goose` `Amp` `Antigravity` `Droid` `Kiro CLI` `Trae` `Qwen Code` `Continue` `OpenHands` `Junie` `Warp` `Zed` `Hermes Agent` `Augment` `Crush` `Mistral Vibe` `Replit` `Kimi Code CLI` `Tabnine CLI` `Devin for Terminal` <br>**...dan 49 agen lainnya.**
+
+<details>
+<summary><b>📜 Daftar lengkap agen & lokasi foldernya</b></summary>
+
+<br>
+
+| Agen | Perintah `--agent` | Folder global |
+|---|---|---|
+| AiderDesk | `aider-desk` | `~/.aider-desk/skills/` |
+| Amp, Replit, Universal | `amp`, `replit`, `universal` | `~/.config/agents/skills/` |
+| Antigravity | `antigravity` | `~/.gemini/antigravity/skills/` |
+| Antigravity CLI | `antigravity-cli` | `~/.gemini/antigravity-cli/skills/` |
+| AstrBot | `astrbot` | `~/.astrbot/data/skills/` |
+| Autohand Code CLI | `autohand-code` | `~/.autohand/skills/` |
+| Augment | `augment` | `~/.augment/skills/` |
+| IBM Bob | `bob` | `~/.bob/skills/` |
+| Claude Code | `claude-code` | `~/.claude/skills/` |
+| OpenClaw | `openclaw` | `~/.openclaw/skills/` |
+| Cline, Codex, Dexto, fx, Kimi Code CLI, Loaf, Pi, Sarvam Code, Warp, Zed | `cline`, `codex`, `dexto`, `fx`, `kimi-code-cli`, `loaf`, `pi`, `sarvam-code`, `warp`, `zed` | `~/.agents/skills/` |
+| CodeBuddy | `codebuddy` | `~/.codebuddy/skills/` |
+| Codemaker | `codemaker` | `~/.codemaker/skills/` |
+| Code Studio | `codestudio` | `~/.codestudio/skills/` |
+| Command Code | `command-code` | `~/.commandcode/skills/` |
+| Continue | `continue` | `~/.continue/skills/` |
+| Cortex Code | `cortex` | `~/.snowflake/cortex/skills/` |
+| Crush | `crush` | `~/.config/crush/skills/` |
+| Cursor | `cursor` | `~/.cursor/skills/` |
+| Deep Agents | `deepagents` | `~/.deepagents/agent/skills/` |
+| Devin for Terminal | `devin` | `~/.config/devin/skills/` |
+| Droid | `droid` | `~/.factory/skills/` |
+| Eve | `eve` | `N/A (project-only)` |
+| Firebender | `firebender` | `~/.firebender/skills/` |
+| ForgeCode | `forgecode` | `~/.forge/skills/` |
+| Gemini CLI | `gemini-cli` | `~/.gemini/skills/` |
+| GitHub Copilot | `github-copilot` | `~/.copilot/skills/` |
+| Goose | `goose` | `~/.config/goose/skills/` |
+| Grok Build | `grok` | `~/.grok/skills/` |
+| inference.sh | `inference-sh` | `~/.inferencesh/skills/` |
+| Jazz | `jazz` | `~/.jazz/skills/` |
+| Junie | `junie` | `~/.junie/skills/` |
+| iFlow CLI | `iflow-cli` | `~/.iflow/skills/` |
+| Kilo Code | `kilo` | `~/.kilo/skills/` |
+| Kimchi | `kimchi` | `~/.config/kimchi/harness/skills/` |
+| Kiro CLI | `kiro-cli` | `~/.kiro/skills/` |
+| Kode | `kode` | `~/.kode/skills/` |
+| Lingma | `lingma` | `~/.lingma/skills/` |
+| MCPJam | `mcpjam` | `~/.mcpjam/skills/` |
+| MiniMax Code | `minimax-code` | `~/.minimax/skills/` |
+| Mistral Vibe | `mistral-vibe` | `~/.vibe/skills/` |
+| Moxby | `moxby` | `~/.moxby/skills/` |
+| Mux | `mux` | `~/.mux/skills/` |
+| OpenCode | `opencode` | `~/.config/opencode/skills/` |
+| OpenHands | `openhands` | `~/.openhands/skills/` |
+| Ona | `ona` | `~/.ona/skills/` |
+| Posit Assistant | `posit-assistant` | `~/.posit/assistant/skills/` |
+| Qoder | `qoder` | `~/.qoder/skills/` |
+| Qoder CN | `qoder-cn` | `~/.qoder-cn/skills/` |
+| Qwen Code | `qwen-code` | `~/.qwen/skills/` |
+| Reasonix | `reasonix` | `~/.reasonix/skills/` |
+| Rovo Dev | `rovodev` | `~/.rovodev/skills/` |
+| Roo Code | `roo` | `~/.roo/skills/` |
+| Tabnine CLI | `tabnine-cli` | `~/.tabnine/agent/skills/` |
+| Terramind | `terramind` | `~/.terramind/skills/` |
+| Tinycloud | `tinycloud` | `~/.tinycloud/skills/` |
+| Trae | `trae` | `~/.trae/skills/` |
+| Trae CN | `trae-cn` | `~/.trae-cn/skills/` |
+| Windsurf | `windsurf` | `~/.codeium/windsurf/skills/` |
+| ZCode | `zcode` | `~/.zcode/skills/` |
+| Zencoder, Zenflow | `zencoder`, `zenflow` | `~/.zencoder/skills/` |
+| Neovate | `neovate` | `~/.neovate/skills/` |
+| Pochi | `pochi` | `~/.pochi/skills/` |
+| PromptScript | `promptscript` | `N/A (project-only)` |
+| AdaL | `adal` | `~/.adal/skills/` |
+| `allowed-tools` |  | `Yes` |
+| `context: fork` |  | `Yes` |
+
+Sumber: [dokumentasi resmi `skills`](https://github.com/vercel-labs/skills/blob/main/docs/agents.md). Installer mendeteksi agen yang
+terpasang di komputermu secara otomatis; kalau tidak ada yang terdeteksi, kamu diminta memilih.
+
+</details>
+
+> **Catatan kompatibilitas.** Instruksi di dalam skill sesekali menyebut fitur khusus Claude Code (mengirim berkas ke pengguna,
+> subagent paralel, pemanggilan `/nama-skill`). Di agen lain, langkah itu diganti padanan agen tersebut (mis. menyimpan hasil di
+> folder `out/` dan memberi tahu lokasinya). Inti pekerjaan (membaca kode, menulis scene Remotion, render, verifikasi) sama di semua agen.
+
+---
+
 ## 🚀 Pasang
 
-### ⚡ Cara tercepat
+### ⚡ Cara tercepat (semua agen)
 
 ```bash
 npx skills add rendydev404/open-skill
 ```
 
-Perintah ini menemukan ketiga skill di repo ini dan menawarkan untuk memasangnya. Untuk satu skill saja:
-`npx skills add rendydev404/open-skill --skill demotion`.
+Installer menemukan ketiga skill, mendeteksi agen AI yang terpasang di komputermu, lalu memasangnya ke folder yang benar.
+
+```bash
+npx skills add rendydev404/open-skill --skill demotion              # satu skill saja
+npx skills add rendydev404/open-skill --agent claude-code codex     # agen tertentu
+npx skills add rendydev404/open-skill -g                            # global (semua proyek)
+npx skills add rendydev404/open-skill --all                         # semua skill, semua agen, tanpa tanya
+```
 
 ### 📋 Salin manual
 
-Skill Claude Code adalah folder berisi `SKILL.md`. Salin folder skill ke `~/.claude/skills/` (tersedia di semua proyek) atau ke
-`.claude/skills/` di dalam repo (khusus proyek itu).
+Skill adalah folder berisi `SKILL.md`. Salin folder dari `skills/` ke folder skill agenmu (lihat [daftar agen](#-agen-ai-yang-didukung)).
+Contoh untuk beberapa agen populer:
 
-<details open>
+| Agen | Folder global (semua proyek) | Folder proyek |
+|---|---|---|
+| Claude Code | `~/.claude/skills/` | `.claude/skills/` |
+| Codex, Cline, Warp, Zed, Pi | `~/.agents/skills/` | `.agents/skills/` |
+| Cursor | `~/.cursor/skills/` | `.agents/skills/` |
+| Gemini CLI | `~/.gemini/skills/` | `.agents/skills/` |
+| GitHub Copilot | `~/.copilot/skills/` | `.agents/skills/` |
+| OpenCode | `~/.config/opencode/skills/` | `.agents/skills/` |
+| Windsurf | `~/.codeium/windsurf/skills/` | `.windsurf/skills/` |
+| Roo Code | `~/.roo/skills/` | `.roo/skills/` |
+
+<details>
 <summary><b>macOS / Linux</b></summary>
 
 ```bash
 git clone https://github.com/rendydev404/open-skill.git
-mkdir -p ~/.claude/skills
+mkdir -p ~/.claude/skills          # ganti dengan folder agenmu
 cp -r open-skill/skills/* ~/.claude/skills/
 ```
 
 </details>
 
-<details open>
+<details>
 <summary><b>Windows (PowerShell)</b></summary>
 
 ```powershell
 git clone https://github.com/rendydev404/open-skill.git
-New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null   # ganti dengan folder agenmu
 Copy-Item -Recurse -Force .\open-skill\skills\* "$env:USERPROFILE\.claude\skills\"
 ```
 
 </details>
 
-**Hanya satu skill?** Salin folder yang diinginkan saja, misalnya `skills/demotion`. **Memperbarui?** `git pull` lalu salin ulang.
-Mulai ulang sesi Claude Code agar skill terbaca.
+**Hanya satu skill?** Salin folder yang diinginkan saja, misalnya `skills/demotion`. **Memperbarui?** `git pull` (atau jalankan
+`npx skills update`) lalu salin ulang. Mulai ulang sesi agen agar skill terbaca.
 
 ---
 
 ## 🧭 Cara memakai
 
-Cukup minta dengan bahasa biasa; Claude akan memilih skill yang cocok dari deskripsinya. Atau panggil langsung dengan `/nama-skill`.
+Cukup minta dengan bahasa biasa; agen memilih skill yang cocok dari deskripsinya. Di agen yang mendukung perintah garis miring
+(mis. Claude Code), skill juga bisa dipanggil langsung dengan `/nama-skill`; di agen lain sebut saja nama skill-nya
+("pakai skill demotion untuk ...").
 
 | Kamu bilang | Skill yang jalan |
 |---|---|
@@ -262,7 +378,7 @@ Cukup minta dengan bahasa biasa; Claude akan memilih skill yang cocok dari deskr
 
 | Kebutuhan | Dipakai oleh | Catatan |
 |---|---|---|
-| [Claude Code](https://claude.com/claude-code) | semua | tempat skill dijalankan |
+| Agen AI yang mendukung [Agent Skills](https://agentskills.io) | semua | Claude Code, Codex, Cursor, Gemini CLI, Copilot, dll. ([daftar](#-agen-ai-yang-didukung)) |
 | Node.js (LTS) + npm | semua | Remotion, scaffold, render |
 | FFmpeg | semua | sudah ikut di Remotion (`npx remotion ffmpeg`), tidak perlu pasang terpisah |
 | GPU (opsional) | `demotion` | render dengan `--gl=angle` ±1,5x lebih cepat |
@@ -301,7 +417,7 @@ open-skill/
 <details>
 <summary><b>Apa bedanya skill dengan plugin atau MCP?</b></summary>
 
-Skill hanyalah instruksi + berkas pendukung yang dimuat Claude saat dibutuhkan. Tidak ada server atau proses yang berjalan.
+Skill hanyalah instruksi + berkas pendukung yang dimuat agen saat dibutuhkan. Tidak ada server atau proses yang berjalan.
 `product-motion-ad` memakai MCP ElevenLabs untuk audio; dua skill lain tidak butuh layanan eksternal.
 
 </details>
@@ -309,7 +425,7 @@ Skill hanyalah instruksi + berkas pendukung yang dimuat Claude saat dibutuhkan. 
 <details>
 <summary><b>Di mana folder skills di Windows?</b></summary>
 
-`C:\Users\<nama>\.claude\skills\` (di PowerShell: `$env:USERPROFILE\.claude\skills`).
+Tergantung agen. Untuk Claude Code: `C:\Users\<nama>\.claude\skills\` (PowerShell: `$env:USERPROFILE\.claude\skills`). Untuk agen lain lihat kolom "Folder global" di [daftar agen](#-agen-ai-yang-didukung).
 
 </details>
 
@@ -322,10 +438,12 @@ demo produk penulis, tetapi templat yang disertakan netral (`templat/src/scenes/
 </details>
 
 <details>
-<summary><b>Bisakah dipakai dengan agen selain Claude Code?</b></summary>
+<summary><b>Apakah hanya untuk Claude Code?</b></summary>
 
-Isinya berkas Markdown + kode Remotion biasa, jadi instruksinya bisa dibaca agen lain. Penemuan otomatis lewat deskripsi
-`SKILL.md` adalah fitur Claude Code.
+Tidak. Skill mengikuti spesifikasi terbuka [Agent Skills](https://agentskills.io) dan bisa dipakai oleh **79 agen AI**: Claude Code,
+Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Cline, Windsurf, Roo Code, Kilo Code, Goose, Amp, Antigravity, Droid, Kiro CLI,
+Trae, Qwen Code, Continue, OpenHands, Junie, Warp, Zed, Hermes Agent, dan lainnya (lihat [daftar lengkap](#-agen-ai-yang-didukung)).
+Instruksi yang menyebut fitur khusus Claude Code (kirim berkas, subagent, `/nama-skill`) dicarikan padanannya oleh agen lain.
 
 </details>
 
