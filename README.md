@@ -7,6 +7,7 @@
 <img alt="Skills" src="https://img.shields.io/badge/skills-3-6F00FF?style=for-the-badge&labelColor=0a0720">
 <img alt="Agent Skills" src="https://img.shields.io/badge/Agent_Skills-79_agen_AI-8B5CF6?style=for-the-badge&labelColor=0a0720">
 <img alt="Remotion" src="https://img.shields.io/badge/Remotion-video_as_code-0b84f3?style=for-the-badge&labelColor=0a0720">
+<img alt="License" src="https://img.shields.io/badge/license-MIT-6F00FF?style=for-the-badge&labelColor=0a0720">
 <img alt="Last commit" src="https://img.shields.io/github/last-commit/rendydev404/open-skill?style=for-the-badge&labelColor=0a0720&color=6F00FF">
 <img alt="Stars" src="https://img.shields.io/github/stars/rendydev404/open-skill?style=for-the-badge&labelColor=0a0720&color=6F00FF">
 
@@ -27,6 +28,12 @@ semua agen AI yang mendukungnya**: Claude Code, Codex, Cursor, Gemini CLI, GitHu
 Hermes Agent, dan 70+ lainnya ([daftar lengkap](#-agen-ai-yang-didukung)).
 
 Semuanya *video sebagai kode*: mulus 30-60 fps, bisa diulang, dan gampang diperbarui saat produk berubah.
+
+<div align="center">
+  <img src="assets/demo.gif" alt="Cuplikan video demo yang dibuat otomatis oleh skill demotion" width="860">
+  <br>
+  <sub>Cuplikan video demo yang dihasilkan skill <code>demotion</code> dari tampilan asli aplikasi (intro, daftar, sambung WhatsApp, statistik).</sub>
+</div>
 
 ---
 
@@ -447,6 +454,12 @@ Trae, Qwen Code, Continue, OpenHands, Junie, Warp, Zed, Hermes Agent, dan lainny
 Instruksi yang menyebut fitur khusus Claude Code (kirim berkas, subagent, `/nama-skill`) dicarikan padanannya oleh agen lain.
 
 </details>
+
+---
+
+## 📄 Lisensi
+
+Dirilis di bawah [lisensi MIT](LICENSE): bebas dipakai, diubah, dan dibagikan, termasuk untuk proyek komersial.
 
 ---
 
