@@ -13,7 +13,7 @@
 
 <br><br>
 
-**[Skill](#-skill-di-repo-ini)** &nbsp;·&nbsp; **[Agen AI](#-agen-ai-yang-didukung)** &nbsp;·&nbsp; **[Pasang](#-pasang)** &nbsp;·&nbsp; **[Cara memakai](#-cara-memakai)** &nbsp;·&nbsp; **[Prasyarat](#-prasyarat)** &nbsp;·&nbsp; **[Struktur repo](#-struktur-repo)** &nbsp;·&nbsp; **[FAQ](#-faq)**
+**[Cara pakai](#-cara-pakai)** &nbsp;·&nbsp; **[Skill](#-skill-di-repo-ini)** &nbsp;·&nbsp; **[Agen AI](#-agen-ai-yang-didukung)** &nbsp;·&nbsp; **[Pasang](#-pasang)** &nbsp;·&nbsp; **[Prasyarat](#-prasyarat)** &nbsp;·&nbsp; **[Struktur repo](#-struktur-repo)** &nbsp;·&nbsp; **[FAQ](#-faq)**
 
 </div>
 
@@ -34,6 +34,69 @@ Semuanya *video sebagai kode*: mulus 30-60 fps, bisa diulang, dan gampang diperb
   <br>
   <sub>Cuplikan video demo yang dihasilkan skill <code>demotion</code> dari tampilan asli aplikasi (intro, daftar, sambung WhatsApp, statistik).</sub>
 </div>
+
+<br>
+
+# 🚀 Cara Pakai
+
+<div align="center">
+  <img src="assets/cara-pakai.svg" alt="Cara pakai: 1 pasang skill, 2 buka folder proyek, 3 minta videonya" width="100%">
+</div>
+
+## 1️⃣ Pasang skill (sekali saja)
+
+```bash
+npx skills add rendydev404/open-skill
+```
+
+Satu perintah untuk semua agen AI yang terpasang di komputermu. Cara lain (salin manual, agen tertentu) ada di bagian [Pasang](#-pasang).
+
+## 2️⃣ Buka folder proyekmu, lalu jalankan agen di dalamnya
+
+> [!IMPORTANT]
+> **Jalankan agen AI di dalam folder proyek yang mau dibuatkan videonya.**
+> Skill membaca kode proyekmu (halaman, komponen, teks UI, harga, aturan) supaya video memakai tampilan dan fakta yang **asli**,
+> bukan karangan. Jadi masuk ke folder proyek dulu, baru jalankan agen.
+
+```bash
+cd ~/proyek/aplikasi-saya      # folder proyek (root repo)
+claude                         # atau: codex · gemini · opencode · agen lain yang kamu pakai
+```
+
+Pakai editor/IDE (Cursor, Windsurf, VS Code + Copilot, Cline, Roo Code, dll.)? Buka folder proyek lewat **File → Open Folder**, lalu buka panel agennya.
+
+## 3️⃣ Minta videonya dengan bahasa biasa
+
+| Skill | Contoh perintah | Buka folder proyek? | Hasil |
+|---|---|---|---|
+| 🎬 **demotion** | `Pakai skill demotion: buatkan video demo sistem ini dari tampilan asli, maksimal 2 menit.` | **Wajib** (folder proyek aplikasi webnya) | `video/out/demo.mp4` |
+| 📰 **motion-reel** | `/motion-reel Fitur pembayaran QRIS coral 30 detik` | Disarankan (agar teks asli produk terbaca); tanpa proyek pun bisa dengan deskripsi | `out/reel.mp4` di folder kerja yang disebut agen |
+| 📣 **product-motion-ads** | `Buat video iklan 40 detik untuk produk ini dengan voice over bahasa Indonesia.` | Disarankan; butuh akun & MCP ElevenLabs untuk suara | `promo-video/out/promo.mp4` |
+
+Di agen yang tidak punya perintah garis miring (`/nama-skill`), cukup tulis nama skill-nya di kalimat: "pakai skill motion-reel untuk ...".
+
+<details open>
+<summary><b>⚙️ Apa yang terjadi setelah kamu memberi perintah?</b></summary>
+
+1. Agen **membaca kode proyekmu**: rute, komponen, teks, harga, aturan, dan warna/font merek.
+2. Agen menyusun storyboard lalu **menyiapkan proyek Remotion** (pertama kali butuh `npm install` ±2 menit; perlu Node.js).
+3. Agen menulis scene, **memeriksa hasilnya lewat gambar**, memperbaiki, lalu **merender** (video demo 2 menit pada 60 fps ±8 menit).
+4. Agen memberi tahu **lokasi file video** (dan mengirimkannya bila agen mendukung).
+
+</details>
+
+<details>
+<summary><b>💡 Tips</b></summary>
+
+- **Monorepo?** Buka folder aplikasi web-nya, bukan folder induk.
+- **Aplikasi tidak perlu dijalankan.** `demotion` mengambil tampilan dari kode, bukan dari browser yang sedang menyala.
+- **Fitur baru?** Minta: "perbarui demo setelah fitur X ditambahkan". Agen hanya memperbarui scene yang berubah lalu render ulang.
+- **Ingin durasi/gaya lain?** Sebut langsung: "maksimal 90 detik", "caption bahasa Inggris", "warna coral".
+- **Agen bertanya?** Wajar: skill hanya bertanya hal yang tidak bisa disimpulkan dari kode (mis. durasi atau bagian yang wajib tampil).
+
+</details>
+
+---
 
 ---
 
@@ -364,21 +427,6 @@ Copy-Item -Recurse -Force .\open-skill\skills\* "$env:USERPROFILE\.claude\skills
 
 **Hanya satu skill?** Salin folder yang diinginkan saja, misalnya `skills/demotion`. **Memperbarui?** `git pull` (atau jalankan
 `npx skills update`) lalu salin ulang. Mulai ulang sesi agen agar skill terbaca.
-
----
-
-## 🧭 Cara memakai
-
-Cukup minta dengan bahasa biasa; agen memilih skill yang cocok dari deskripsinya. Di agen yang mendukung perintah garis miring
-(mis. Claude Code), skill juga bisa dipanggil langsung dengan `/nama-skill`; di agen lain sebut saja nama skill-nya
-("pakai skill demotion untuk ...").
-
-| Kamu bilang | Skill yang jalan |
-|---|---|
-| "Buatkan video demo sistem ini dari tampilan aslinya" | `demotion` |
-| "Perbarui demo setelah ada fitur baru" | `demotion` |
-| "Buat motion reel untuk fitur X, warna coral" | `motion-reel` |
-| "Buat video iklan 40 detik + voice over untuk produk ini" | `product-motion-ad` |
 
 ---
 
