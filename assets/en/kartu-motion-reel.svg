@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="250" viewBox="0 0 560 250" fill="none">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050f"/><stop offset="1" stop-color="#150b36"/></linearGradient>
+    <radialGradient id="g" cx="1" cy="0" r="0.95"><stop offset="0" stop-color="#6F00FF" stop-opacity="0.45"/><stop offset="1" stop-color="#6F00FF" stop-opacity="0"/></radialGradient>
+    <pattern id="k" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#ece8ff" stroke-opacity="0.05"/></pattern>
+    <clipPath id="c"><rect width="560" height="250" rx="22"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)"><rect width="560" height="250" fill="url(#b)"/><rect width="560" height="250" fill="url(#k)"/><rect width="560" height="250" fill="url(#g)"/></g>
+  <rect x="0.5" y="0.5" width="559" height="249" rx="21.5" stroke="#9D7BFF" stroke-opacity="0.38"/>
+  <g transform="translate(28 26)">
+    <rect width="60" height="60" rx="16" fill="#6F00FF" fill-opacity="0.28" stroke="#9D7BFF" stroke-opacity="0.6"/>
+    <g transform="translate(30 30)"><rect x="-17" y="-14" width="34" height="28" rx="6" stroke="#C9BBFF" stroke-width="2.6"/><path d="M-5 -7L9 0L-5 7Z" fill="#C9BBFF"/><path d="M-17 -6H17" stroke="#C9BBFF" stroke-width="2"/></g>
+  </g>
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="106" y="64" font-size="31" font-weight="800" fill="#ffffff" letter-spacing="-0.5">motion-reel</text>
+    <text x="106" y="86" font-size="13" font-weight="700" letter-spacing="2" fill="#9D7BFF">SKILL 2 · MOTION GRAPHIC</text>
+    <text x="28" y="130" font-size="17" font-weight="500" fill="#a9a6c9"><tspan x="28" dy="0">Editorial-style product reels: cream</tspan><tspan x="28" dy="23">paper, ink, highlighter, kinetic type.</tspan></text>
+    <rect x="28" y="196" width="83" height="30" rx="15" fill="#6F00FF" fill-opacity="0.22" stroke="#9D7BFF" stroke-opacity="0.5"/><text x="70" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#C9BBFF">Remotion</text><rect x="119.2" y="196" width="134" height="30" rx="15" fill="#6F00FF" fill-opacity="0.22" stroke="#9D7BFF" stroke-opacity="0.5"/><text x="186" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#C9BBFF">6 color presets</text><rect x="260.8" y="196" width="41" height="30" rx="15" fill="#6F00FF" fill-opacity="0.22" stroke="#9D7BFF" stroke-opacity="0.5"/><text x="281" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#C9BBFF">SFX</text>
+  </g>
+</svg>

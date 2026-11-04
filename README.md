@@ -1,5 +1,9 @@
 <div align="center">
 
+<a href="README.md"><img src="assets/lang-id-on.svg" alt="Bahasa Indonesia (aktif)" height="46"></a><a href="README.en.md"><img src="assets/lang-en-off.svg" alt="English" height="46"></a>
+
+<br><br>
+
 <img src="assets/banner.svg" alt="open-skill: koleksi Agent Skills untuk video produk otomatis, jalan di semua agen AI" width="100%">
 
 <br>
@@ -95,8 +99,6 @@ Di agen yang tidak punya perintah garis miring (`/nama-skill`), cukup tulis nama
 - **Agen bertanya?** Wajar: skill hanya bertanya hal yang tidak bisa disimpulkan dari kode (mis. durasi atau bagian yang wajib tampil).
 
 </details>
-
----
 
 ---
 
@@ -447,8 +449,10 @@ Copy-Item -Recurse -Force .\open-skill\skills\* "$env:USERPROFILE\.claude\skills
 
 ```text
 open-skill/
-├── README.md
-├── assets/                      # banner, kartu skill, kolase pratinjau
+├── README.md                    # Bahasa Indonesia
+├── README.en.md                 # English
+├── LICENSE
+├── assets/                      # banner, kartu skill, kolase pratinjau (en/ = versi Inggris)
 └── skills/
     ├── demotion/                # demo sistem dari layar asli
     │   ├── SKILL.md

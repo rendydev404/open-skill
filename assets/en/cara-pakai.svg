@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050f"/><stop offset="1" stop-color="#150b36"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0" r="0.8"><stop offset="0" stop-color="#6F00FF" stop-opacity="0.38"/><stop offset="1" stop-color="#6F00FF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="kartu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1048"/><stop offset="1" stop-color="#0e0928"/></linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" stroke="#ece8ff" stroke-opacity="0.05"/></pattern>
+    <clipPath id="klip"><rect width="1280" height="360" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#klip)">
+    <rect width="1280" height="360" fill="url(#bg)"/>
+    <rect width="1280" height="360" fill="url(#grid)"/>
+    <rect width="1280" height="360" fill="url(#glow)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1279" height="359" rx="27.5" stroke="#ece8ff" stroke-opacity="0.14"/>
+
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <!-- kartu 1 -->
+    <rect x="40" y="40" width="380" height="280" rx="24" fill="url(#kartu)" stroke="#9D7BFF" stroke-opacity="0.45"/>
+    <circle cx="94" cy="96" r="34" fill="#6F00FF"/>
+    <text x="94" y="110" text-anchor="middle" font-size="38" font-weight="800" fill="#ffffff">1</text>
+    <g transform="translate(340 76)" stroke="#C9BBFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><rect x="-26" y="-18" width="52" height="40" rx="8"/><path d="M-14 -4l9 8-9 8M2 12h12"/></g>
+    <text x="72" y="190" font-size="32" font-weight="800" fill="#ffffff">Install the skill</text>
+    <text x="72" y="232" font-size="20" font-weight="500" fill="#a9a6c9">One command, works with every</text>
+    <text x="72" y="260" font-size="20" font-weight="500" fill="#a9a6c9">AI agent (Claude Code, Codex, etc.)</text>
+    <text x="68" y="298" font-size="15" font-weight="700" fill="#C9BBFF" font-family="'Cascadia Mono', Consolas, monospace">npx skills add rendydev404/open-skill</text>
+
+    <!-- panah -->
+    <path d="M429 166l14 14-14 14z" fill="#9D7BFF"/>
+    <path d="M839 166l14 14-14 14z" fill="#9D7BFF"/>
+
+    <!-- kartu 2 -->
+    <rect x="450" y="40" width="380" height="280" rx="24" fill="url(#kartu)" stroke="#6F00FF" stroke-width="2.5"/>
+    <circle cx="504" cy="96" r="34" fill="#6F00FF"/>
+    <text x="504" y="110" text-anchor="middle" font-size="38" font-weight="800" fill="#ffffff">2</text>
+    <g transform="translate(750 78)" stroke="#C9BBFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M-28 -16h18l8 8h30a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6h-50a6 6 0 0 1-6-6z"/></g>
+    <text x="482" y="190" font-size="32" font-weight="800" fill="#ffffff">Open your project</text>
+    <text x="482" y="232" font-size="20" font-weight="500" fill="#a9a6c9">Run your AI agent inside</text>
+    <text x="482" y="260" font-size="20" font-weight="500" fill="#a9a6c9">your project folder (root)</text>
+    <text x="482" y="298" font-size="17" font-weight="700" fill="#C9BBFF" font-family="'Cascadia Mono', Consolas, monospace">cd my-project &amp;&amp; claude</text>
+
+    <!-- kartu 3 -->
+    <rect x="860" y="40" width="380" height="280" rx="24" fill="url(#kartu)" stroke="#9D7BFF" stroke-opacity="0.45"/>
+    <circle cx="914" cy="96" r="34" fill="#6F00FF"/>
+    <text x="914" y="110" text-anchor="middle" font-size="38" font-weight="800" fill="#ffffff">3</text>
+    <g transform="translate(1160 78)"><circle r="26" fill="#6F00FF"/><path d="M-8 -13L15 0L-8 13Z" fill="#ffffff"/></g>
+    <text x="892" y="190" font-size="32" font-weight="800" fill="#ffffff">Ask for the video</text>
+    <text x="892" y="232" font-size="20" font-weight="500" fill="#a9a6c9">Ask in plain words. The agent</text>
+    <text x="892" y="260" font-size="20" font-weight="500" fill="#a9a6c9">reads your code, then renders</text>
+    <text x="892" y="298" font-size="17" font-weight="700" fill="#C9BBFF" font-family="'Cascadia Mono', Consolas, monospace">"Make a demo of this system"</text>
+  </g>
+</svg>
