@@ -1,0 +1,25 @@
+{
+  "name": "motion-reel",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sfx": "node scripts/make-sfx.mjs public/sfx",
+    "studio": "remotion studio src/index.ts --port=3917",
+    "check": "tsc --noEmit",
+    "render": "remotion render src/index.ts Reel out/reel.mp4 --crf=20 --port=3917",
+    "frames": "node scripts/frames.mjs out/reel.mp4 out/frames"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/google-fonts": "4.0.537",
+    "lucide-react": "^1.16.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "sharp": "^0.34.0",
+    "typescript": "^5.6.0"
+  }
+}

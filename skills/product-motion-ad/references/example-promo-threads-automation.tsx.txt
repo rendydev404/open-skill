@@ -1,0 +1,208 @@
+import React from "react";
+import { AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { BlobBg, DarkBg, Scene, SpeedCtx, T, Tr } from "./primitives";
+import {
+  Analytics,
+  BrandReveal,
+  Cta,
+  Hook,
+  HOOK,
+  Login,
+  Mode,
+  NicheMatch,
+  Posts,
+  Profile,
+  Radar,
+  Reply,
+  SceneProps,
+  SolidLogo,
+  Writing,
+} from "./scenes";
+import { clamp, easeInOut, FPS } from "./theme";
+import WORDS_JSON from "../public/vo/words.json";
+
+type Def = {
+  C: React.FC<SceneProps>;
+  /** kata pembuka kalimat VO yang menandai awal scene (cocokkan ke words.json) */
+  cue?: string;
+  /** percepatan animasi di dalam scene (tempo versi 45 detik) */
+  speed: number;
+  enter: Tr;
+  exit: Tr;
+};
+
+/** Urutan iklan = urutan flow produk. Tiap scene mulai tepat saat kalimatnya diucapkan. */
+const DEFS: Def[] = [
+  { C: Hook, cue: "eh akun", speed: 1, enter: "none", exit: "none" },
+  { C: SolidLogo, cue: "kenalin", speed: 1.5, enter: "none", exit: "none" },
+  { C: BrandReveal, speed: 1.4, enter: "none", exit: "blurZoom" },
+  { C: Login, cue: "login pakai", speed: 2.2, enter: "push", exit: "push" },
+  { C: Profile, cue: "atur niche", speed: 2.9, enter: "push", exit: "push" },
+  { C: Radar, cue: "ainya mantau", speed: 1.8, enter: "push", exit: "fade" },
+  { C: NicheMatch, cue: "terus dijadiin", speed: 1.8, enter: "fade", exit: "push" },
+  { C: Writing, cue: "draf ditulis", speed: 3.1, enter: "push", exit: "push" },
+  { C: Mode, cue: "mau tinjau", speed: 1.7, enter: "push", exit: "blurZoom" },
+  { C: Posts, cue: "terbit sendiri", speed: 1.6, enter: "blurZoom", exit: "push" },
+  { C: Reply, cue: "ada komen", speed: 2, enter: "push", exit: "push" },
+  { C: Analytics, cue: "dan ainya", speed: 1.8, enter: "push", exit: "blurZoom" },
+  { C: Cta, cue: "threads automation cobain", speed: 1.2, enter: "blurZoom", exit: "fade" },
+];
+
+/** VO satu take dipercepat sedikit (pitch tetap) agar ritme tetap rapat. */
+const RATE = 1;
+const PRE = 6; // scene mulai sedikit sebelum suaranya
+const SOLID_LEN = 54; // potongan warna aksen + logo jatuh (frame nyata)
+const END_HOLD = 40;
+
+const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9]/g, "");
+const WORDS = (WORDS_JSON as { text: string; start: number; end: number }[]).map((w) => ({ ...w, start: w.start / RATE, end: w.end / RATE, n: norm(w.text) })).filter((w) => w.n);
+
+/** Cari waktu (detik) kata pertama dari frasa, mulai dari indeks `from`. */
+const findCue = (phrase: string, from: number) => {
+  const p = phrase.split(" ").map(norm);
+  for (let i = from; i < WORDS.length; i++) {
+    if (p.every((w, k) => WORDS[i + k]?.n.startsWith(w))) return i;
+  }
+  throw new Error(`Kata "${phrase}" tidak ditemukan di words.json`);
+};
+
+const build = () => {
+  let wi = 0;
+  const starts: number[] = DEFS.map((d) => {
+    if (!d.cue) return -1;
+    wi = findCue(d.cue, wi);
+    return Math.round(WORDS[wi].start * FPS);
+  });
+  const hookP2 = Math.round(WORDS[findCue("padahal", 0)].start * FPS) - 4;
+  const hookP3 = Math.round(WORDS[findCue("kok", 0)].start * FPS) - 3;
+  const audioEnd = Math.ceil(WORDS[WORDS.length - 1].end * FPS);
+
+  const froms = DEFS.map((d, i) => {
+    if (i === 0) return 0;
+    if (d.C === BrandReveal) return starts[i - 1] - PRE + SOLID_LEN;
+    return starts[i] - PRE;
+  });
+  const scenes = DEFS.map((d, i) => {
+    const from = froms[i];
+    const next = DEFS[i + 1];
+    const overlap = d.exit !== "none" || (next && next.enter !== "none") ? T : 0;
+    const dur = next ? froms[i + 1] + overlap - from : audioEnd + END_HOLD - from;
+    return { ...d, from, dur };
+  });
+  return { scenes, hookP2, hookP3, total: audioEnd + END_HOLD };
+};
+
+export const TL = build();
+HOOK.p2 = TL.hookP2;
+HOOK.p3 = TL.hookP3;
+
+/* ------------------------------------------------------------------ */
+/* Sound effect (ElevenLabs) — titik waktu diturunkan dari animasi.    */
+/* Waktu animasi di dalam scene dibagi `speed` agar jatuh di frame     */
+/* nyata yang sama dengan gerakannya.                                  */
+/* ------------------------------------------------------------------ */
+type Sfx = "whoosh" | "whoosh-low" | "slam" | "logo-hit" | "click" | "pop" | "success" | "typing" | "riser" | "glitch";
+const buildSfx = () => {
+  const cues: { at: number; id: Sfx; vol: number }[] = [];
+  const at = (s: (typeof TL.scenes)[number], sceneT: number) => Math.round(s.from + sceneT / s.speed);
+  TL.scenes.forEach((s, i) => {
+    const add = (t: number, id: Sfx, vol = 0.45) => cues.push({ at: at(s, t), id, vol });
+    const D = s.dur * s.speed;
+    if (i > 0 && s.enter !== "none") cues.push({ at: Math.max(0, s.from - 3), id: i % 2 ? "whoosh" : "whoosh-low", vol: 0.5 });
+    if (s.C === Hook) {
+      [40, 52, 64].forEach((t) => add(t, "pop", 0.4));
+      add(HOOK.p2 - 6, "whoosh", 0.55);
+      add(HOOK.p3 - 6, "whoosh-low", 0.5);
+      add(HOOK.p3, "slam", 0.75);
+    }
+    if (s.C === SolidLogo) {
+      add(0, "glitch", 0.5);
+      add(24, "logo-hit", 0.6);
+    }
+    if (s.C === BrandReveal) add(10, "glitch", 0.3);
+    if (s.C === Login) {
+      add(56, "click", 0.7);
+      add(64, "whoosh", 0.3);
+      add(112, "click", 0.7);
+      add(128, "success", 0.5);
+    }
+    if (s.C === Profile) {
+      add(18, "typing", 0.3);
+      [58, 66, 74].forEach((t) => add(t, "pop", 0.35));
+      add(96, "typing", 0.3);
+      add(Math.max(150, D - 70), "click", 0.6);
+    }
+    if (s.C === Radar) {
+      add(4, "glitch", 0.35);
+      [20, 75, 130, 185, 240, 290, 318].forEach((a) => add(8 + a / 4.2, "pop", 0.22));
+    }
+    if (s.C === NicheMatch) {
+      add(40, "whoosh-low", 0.35);
+      [62, 74, 86].forEach((t) => add(t, "pop", 0.4));
+    }
+    if (s.C === Writing) {
+      add(12, "typing", 0.3);
+      [56, 68, 80, 92].forEach((t) => add(t, "pop", 0.3));
+      add(Math.min(130, D - 80) + 44, "success", 0.5);
+    }
+    if (s.C === Mode) add(40, "click", 0.7);
+    if (s.C === Posts) {
+      add(2, "pop", 0.4);
+      add(24, "pop", 0.3);
+    }
+    if (s.C === Reply) {
+      const spamAt = Math.min(100, D - 90);
+      add(8, "pop", 0.4);
+      add(56, "pop", 0.45);
+      add(spamAt, "pop", 0.3);
+      add(spamAt + 30, "glitch", 0.45);
+    }
+    if (s.C === Analytics) {
+      add(12, "riser", 0.3);
+      add(Math.min(90, D - 80), "pop", 0.45);
+    }
+    if (s.C === Cta) {
+      add(2, "logo-hit", 0.5);
+      add(D - 50, "click", 0.7);
+    }
+  });
+  return cues;
+};
+const SFX = buildSfx();
+export const PROMO_DURATION = TL.total;
+
+const DARK_FROM = TL.scenes.findIndex((s) => s.C === BrandReveal);
+const LIGHT_FROM = TL.scenes.findIndex((s) => s.C === Reply);
+
+/** Latar global yang terus hidup di bawah semua scene; terang <-> gelap di-crossfade pelan. */
+const Backdrop: React.FC = () => {
+  const frame = useCurrentFrame();
+  const a = TL.scenes[DARK_FROM].from;
+  const b = TL.scenes[LIGHT_FROM].from;
+  const dark = interpolate(frame, [a - 1, a, b - 8, b + T + 8], [0, 1, 1, 0], { ...clamp, easing: easeInOut });
+  return (
+    <AbsoluteFill>
+      <BlobBg />
+      {dark > 0 ? <DarkBg opacity={dark} glowY={1200} /> : null}
+    </AbsoluteFill>
+  );
+};
+
+export const Promo: React.FC = () => (
+  <AbsoluteFill>
+    <Backdrop />
+    {TL.scenes.map((s, i) => (
+      <Scene key={i} from={s.from} dur={s.dur} enter={s.enter} exit={s.exit}>
+        <SpeedCtx.Provider value={s.speed}>
+          <s.C dur={s.dur * s.speed} />
+        </SpeedCtx.Provider>
+      </Scene>
+    ))}
+    {SFX.map((c, i) => (
+      <Sequence key={`sfx${i}`} from={c.at} layout="none">
+        <Audio src={staticFile(`sfx/${c.id}.mp3`)} volume={c.vol} />
+      </Sequence>
+    ))}
+    <Audio src={staticFile("vo/full.mp3")} playbackRate={RATE} />
+  </AbsoluteFill>
+);

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06100c"/><stop offset="1" stop-color="#0e261d"/></linearGradient>
+    <radialGradient id="glow" cx="0.80" cy="0.05" r="0.75"><stop offset="0" stop-color="#3ddc97" stop-opacity="0.34"/><stop offset="1" stop-color="#3ddc97" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow2" cx="0.0" cy="1.0" r="0.6"><stop offset="0" stop-color="#2f5bff" stop-opacity="0.16"/><stop offset="1" stop-color="#2f5bff" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" stroke="#e8f0ec" stroke-opacity="0.055"/></pattern>
+    <linearGradient id="hijau" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ddc97"/><stop offset="1" stop-color="#a7f3d0"/></linearGradient>
+    <filter id="bayang" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000" flood-opacity="0.55"/></filter>
+    <clipPath id="klip"><rect width="1280" height="380" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#klip)">
+    <rect width="1280" height="380" fill="url(#bg)"/>
+    <rect width="1280" height="380" fill="url(#grid)"/>
+    <rect width="1280" height="380" fill="url(#glow)"/>
+    <rect width="1280" height="380" fill="url(#glow2)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1279" height="379" rx="27.5" stroke="#e8f0ec" stroke-opacity="0.12"/>
+
+  <!-- teks -->
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="64" y="132" font-size="22" font-weight="700" letter-spacing="4" fill="#3ddc97">KOLEKSI SKILL CLAUDE CODE</text>
+    <text x="64" y="232" font-size="104" font-weight="800" letter-spacing="-3" fill="#ffffff">open<tspan fill="url(#hijau)">-skill</tspan></text>
+    <text x="68" y="282" font-size="27" font-weight="500" fill="#93a99f">Video produk, demo sistem, dan iklan motion graphic</text>
+    <text x="68" y="318" font-size="27" font-weight="500" fill="#93a99f">dibuat otomatis dari kode, dengan Remotion.</text>
+  </g>
+
+  <!-- jendela browser ilustrasi -->
+  <g filter="url(#bayang)" transform="rotate(-3 960 190)">
+    <rect x="770" y="62" width="440" height="268" rx="16" fill="#f6f6f3"/>
+    <path d="M770 78a16 16 0 0 1 16-16h408a16 16 0 0 1 16 16v26H770z" fill="#e6e9e7"/>
+    <circle cx="792" cy="83" r="5.5" fill="#ff5f57"/><circle cx="811" cy="83" r="5.5" fill="#febc2e"/><circle cx="830" cy="83" r="5.5" fill="#28c840"/>
+    <rect x="860" y="73" width="230" height="20" rx="10" fill="#ffffff"/>
+    <rect x="800" y="128" width="170" height="14" rx="7" fill="#15201b"/>
+    <rect x="800" y="154" width="250" height="9" rx="4.5" fill="#cfd5d1"/>
+    <rect x="800" y="172" width="210" height="9" rx="4.5" fill="#cfd5d1"/>
+    <rect x="800" y="204" width="360" height="40" rx="10" fill="#ffffff" stroke="#d3d3cb"/>
+    <rect x="814" y="219" width="120" height="10" rx="5" fill="#9aa5a0"/>
+    <rect x="800" y="262" width="124" height="38" rx="10" fill="#0f7a5c"/>
+    <rect x="818" y="277" width="88" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+    <g transform="translate(902 280) scale(1.25)"><path d="M2 2 L2 23.5 L7.6 18.4 L11.3 26.6 L15 25 L11.3 16.9 L18.8 16.9 Z" fill="#0b1813" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/></g>
+    <circle cx="935" cy="283" r="26" stroke="#3ddc97" stroke-width="2.5" stroke-opacity="0.7"/>
+  </g>
+  <!-- caption melayang -->
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect x="1004" y="262" width="226" height="62" rx="16" fill="#08140f" fill-opacity="0.96" stroke="#e8f0ec" stroke-opacity="0.16"/>
+    <rect x="1018" y="278" width="78" height="22" rx="7" fill="#3ddc97"/>
+    <text x="1028" y="294" font-size="12" font-weight="800" letter-spacing="1" fill="#0b1813">1 · BUKA</text>
+    <text x="1018" y="316" font-size="14" font-weight="700" fill="#ffffff">Klik, ketik, selesai</text>
+  </g>
+  <!-- tombol putar -->
+  <g transform="translate(1128 56)">
+    <circle r="30" fill="#3ddc97"/><path d="M-9 -14L16 0L-9 14Z" fill="#0b1813"/>
+  </g>
+
+  <!-- chip skill -->
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700">
+    <rect x="64" y="340" width="130" height="2" rx="1" fill="#3ddc97" fill-opacity="0"/>
+  </g>
+</svg>
