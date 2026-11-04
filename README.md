@@ -4,11 +4,11 @@
 
 <br>
 
-<img alt="Skills" src="https://img.shields.io/badge/skills-3-3ddc97?style=for-the-badge&labelColor=0b1813">
-<img alt="Agent Skills" src="https://img.shields.io/badge/Agent_Skills-79_agen_AI-d97757?style=for-the-badge&labelColor=0b1813">
-<img alt="Remotion" src="https://img.shields.io/badge/Remotion-video_as_code-0b84f3?style=for-the-badge&labelColor=0b1813">
-<img alt="Last commit" src="https://img.shields.io/github/last-commit/rendydev404/open-skill?style=for-the-badge&labelColor=0b1813&color=3ddc97">
-<img alt="Stars" src="https://img.shields.io/github/stars/rendydev404/open-skill?style=for-the-badge&labelColor=0b1813&color=3ddc97">
+<img alt="Skills" src="https://img.shields.io/badge/skills-3-6F00FF?style=for-the-badge&labelColor=0a0720">
+<img alt="Agent Skills" src="https://img.shields.io/badge/Agent_Skills-79_agen_AI-8B5CF6?style=for-the-badge&labelColor=0a0720">
+<img alt="Remotion" src="https://img.shields.io/badge/Remotion-video_as_code-0b84f3?style=for-the-badge&labelColor=0a0720">
+<img alt="Last commit" src="https://img.shields.io/github/last-commit/rendydev404/open-skill?style=for-the-badge&labelColor=0a0720&color=6F00FF">
+<img alt="Stars" src="https://img.shields.io/github/stars/rendydev404/open-skill?style=for-the-badge&labelColor=0a0720&color=6F00FF">
 
 <br><br>
 
@@ -78,6 +78,7 @@ Semuanya *video sebagai kode*: mulus 30-60 fps, bisa diulang, dan gampang diperb
 ### Alur kerja
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1a0f40","primaryTextColor":"#ffffff","primaryBorderColor":"#6F00FF","lineColor":"#9D7BFF","fontFamily":"Inter, sans-serif"}}}%%
 flowchart LR
     A["📂 Kode aplikasi"] --> B["🔎 Riset produk"]
     B --> C["🗺️ Storyboard"]
@@ -129,7 +130,7 @@ const script: Script = {
 | `referensi/` | Arsitektur engine, 23 jebakan + solusi, panduan storyboard & caption, templat brief subagent, render & kirim |
 
 ```bash
-node ~/.claude/skills/demotion/skrip/scaffold.mjs --dest ./video --nama "Produk" --domain produk.com --aksen "#3ddc97" --install
+node ~/.claude/skills/demotion/skrip/scaffold.mjs --dest ./video --nama "Produk" --domain produk.com --aksen "#6F00FF" --install
 ```
 
 </details>

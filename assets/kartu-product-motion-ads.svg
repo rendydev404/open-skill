@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="560" height="250" viewBox="0 0 560 250" fill="none">
   <defs>
-    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1914"/><stop offset="1" stop-color="#0f261d"/></linearGradient>
-    <radialGradient id="g" cx="1" cy="0" r="0.9"><stop offset="0" stop-color="#ff8a5b" stop-opacity="0.30"/><stop offset="1" stop-color="#ff8a5b" stop-opacity="0"/></radialGradient>
-    <pattern id="k" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#e8f0ec" stroke-opacity="0.05"/></pattern>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050f"/><stop offset="1" stop-color="#150b36"/></linearGradient>
+    <radialGradient id="g" cx="1" cy="0" r="0.95"><stop offset="0" stop-color="#6F00FF" stop-opacity="0.45"/><stop offset="1" stop-color="#6F00FF" stop-opacity="0"/></radialGradient>
+    <pattern id="k" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#ece8ff" stroke-opacity="0.05"/></pattern>
     <clipPath id="c"><rect width="560" height="250" rx="22"/></clipPath>
   </defs>
   <g clip-path="url(#c)"><rect width="560" height="250" fill="url(#b)"/><rect width="560" height="250" fill="url(#k)"/><rect width="560" height="250" fill="url(#g)"/></g>
-  <rect x="0.5" y="0.5" width="559" height="249" rx="21.5" stroke="#ff8a5b" stroke-opacity="0.35"/>
+  <rect x="0.5" y="0.5" width="559" height="249" rx="21.5" stroke="#9D7BFF" stroke-opacity="0.38"/>
   <g transform="translate(28 26)">
-    <rect width="60" height="60" rx="16" fill="#ff8a5b" fill-opacity="0.14" stroke="#ff8a5b" stroke-opacity="0.5"/>
-    <g transform="translate(30 30)"><path d="M-16 -5H-8L6 -15V15L-8 5H-16Z" fill="#ff8a5b"/><path d="M12 -8Q18 0 12 8" stroke="#ff8a5b" stroke-width="2.6" stroke-linecap="round"/><path d="M17 -13Q27 0 17 13" stroke="#ff8a5b" stroke-width="2.6" stroke-linecap="round" stroke-opacity="0.7"/></g>
+    <rect width="60" height="60" rx="16" fill="#6F00FF" fill-opacity="0.28" stroke="#9D7BFF" stroke-opacity="0.6"/>
+    <g transform="translate(30 30)"><path d="M-16 -5H-8L6 -15V15L-8 5H-16Z" fill="#C9BBFF"/><path d="M12 -8Q18 0 12 8" stroke="#C9BBFF" stroke-width="2.6" stroke-linecap="round"/><path d="M17 -13Q27 0 17 13" stroke="#C9BBFF" stroke-width="2.6" stroke-linecap="round" stroke-opacity="0.7"/></g>
   </g>
   <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
     <text x="106" y="64" font-size="31" font-weight="800" fill="#ffffff" letter-spacing="-0.5">product-motion-ads</text>
-    <text x="106" y="86" font-size="13" font-weight="700" letter-spacing="2" fill="#ff8a5b">SKILL 3 · VIDEO IKLAN</text>
-    <text x="28" y="130" font-size="17" font-weight="500" fill="#a9bbb2"><tspan x="28" dy="0">Iklan 30-45 detik dari flow produk asli,</tspan><tspan x="28" dy="23">lengkap dengan VO &amp; SFX ElevenLabs.</tspan></text>
-    <rect x="28" y="196" width="83" height="30" rx="15" fill="#ff8a5b" fill-opacity="0.12" stroke="#ff8a5b" stroke-opacity="0.45"/><text x="70" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#ff8a5b">Remotion</text><rect x="119.2" y="196" width="100" height="30" rx="15" fill="#ff8a5b" fill-opacity="0.12" stroke="#ff8a5b" stroke-opacity="0.45"/><text x="169" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#ff8a5b">ElevenLabs</text><rect x="227.2" y="196" width="83" height="30" rx="15" fill="#ff8a5b" fill-opacity="0.12" stroke="#ff8a5b" stroke-opacity="0.45"/><text x="269" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#ff8a5b">VO + SFX</text>
+    <text x="106" y="86" font-size="13" font-weight="700" letter-spacing="2" fill="#9D7BFF">SKILL 3 · VIDEO IKLAN</text>
+    <text x="28" y="130" font-size="17" font-weight="500" fill="#a9a6c9"><tspan x="28" dy="0">Iklan 30-45 detik dari flow produk asli,</tspan><tspan x="28" dy="23">lengkap dengan VO &amp; SFX ElevenLabs.</tspan></text>
+    <rect x="28" y="196" width="83" height="30" rx="15" fill="#6F00FF" fill-opacity="0.22" stroke="#9D7BFF" stroke-opacity="0.5"/><text x="70" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#C9BBFF">Remotion</text><rect x="119.2" y="196" width="100" height="30" rx="15" fill="#6F00FF" fill-opacity="0.22" stroke="#9D7BFF" stroke-opacity="0.5"/><text x="169" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#C9BBFF">ElevenLabs</text><rect x="227.2" y="196" width="83" height="30" rx="15" fill="#6F00FF" fill-opacity="0.22" stroke="#9D7BFF" stroke-opacity="0.5"/><text x="269" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#C9BBFF">VO + SFX</text>
   </g>
 </svg>
